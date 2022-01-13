@@ -12,10 +12,14 @@ services:
     security_opt:
       - seccomp:seccomp_profile.json
     volumes:
-      - sonarqube_conf:/opt/sonarqube/conf      
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
+      # - sonarqube_conf:/opt/sonarqube/conf      
+      # - sonarqube_data:/opt/sonarqube/data
+      # - sonarqube_extensions:/opt/sonarqube/extensions
+      # - sonarqube_logs:/opt/sonarqube/logs
+      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_conf/conf:/opt/sonarqube/conf
+      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_data:/opt/sonarqube/data
+      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions
+      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_logs:/opt/sonarqube/logs
     ports:
       - "9000:9000"
   db:
@@ -24,13 +28,14 @@ services:
       POSTGRES_USER: sonar
       POSTGRES_PASSWORD: sonar
     volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
-
-volumes:
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
-  postgresql:
-  postgresql_data:
+      # - postgresql:/var/lib/postgresql
+      # - postgresql_data:/var/lib/postgresql/data
+      - /home/sanjay/Documents/project-data/sonarqube/postgresql:/var/lib/postgresql
+      - /home/sanjay/Documents/project-data/sonarqube/postgresql_data:/var/lib/postgresql/data
+# volumes:
+#   sonarqube_conf:
+#   sonarqube_data:
+#   sonarqube_extensions:
+#   sonarqube_logs:
+#   postgresql:
+#   postgresql_data:
