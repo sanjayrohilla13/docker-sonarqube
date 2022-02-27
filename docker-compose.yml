@@ -16,10 +16,10 @@ services:
       # - sonarqube_data:/opt/sonarqube/data
       # - sonarqube_extensions:/opt/sonarqube/extensions
       # - sonarqube_logs:/opt/sonarqube/logs
-      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_conf/conf:/opt/sonarqube/conf
-      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_data:/opt/sonarqube/data
-      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions
-      - /home/sanjay/Documents/project-data/sonarqube/sonarqube_logs:/opt/sonarqube/logs
+      - /home/sanjay/Documents/devops/project-data/sonarqube/sonarqube_conf/conf:/opt/sonarqube/conf
+      - /home/sanjay/Documents/devops/project-data/sonarqube/sonarqube_data:/opt/sonarqube/data
+      - /home/sanjay/Documents/devops/project-data/sonarqube/sonarqube_extensions:/opt/sonarqube/extensions
+      - /home/sanjay/Documents/devops/project-data/sonarqube/sonarqube_logs:/opt/sonarqube/logs
     ports:
       - "9000:9000"
   db:
@@ -30,8 +30,8 @@ services:
     volumes:
       # - postgresql:/var/lib/postgresql
       # - postgresql_data:/var/lib/postgresql/data
-      - /home/sanjay/Documents/project-data/sonarqube/postgresql:/var/lib/postgresql
-      - /home/sanjay/Documents/project-data/sonarqube/postgresql_data:/var/lib/postgresql/data
+      - /home/sanjay/Documents/devops/project-data/sonarqube/postgresql:/var/lib/postgresql
+      - /home/sanjay/Documents/devops/project-data/sonarqube/postgresql_data:/var/lib/postgresql/data
 # volumes:
 #   sonarqube_conf:
 #   sonarqube_data:
