@@ -6,7 +6,7 @@ Initial requirements
             sysctl -w vm.max_map_count=262144
             sysctl -w fs.file-max=65536
             ulimit -n 65536
-            ulimit -u 4096
+            do
         b. Check the postgresql version supported by the required sonarqube version.
             In our case for SonarQube 9.2.4, postgres 12 is supported
         c. seccomp_profile.json file for security options
